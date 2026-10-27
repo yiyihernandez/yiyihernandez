@@ -88,9 +88,9 @@ a(f'<text x="{W/2}" y="118" text-anchor="middle" {F} font-size="13" letter-spaci
 
 #ABOUT ME
 a(f'<rect x="60" y="155" width="740" height="75" rx="10" fill="#161b22" stroke="#30363d"/>')
-a(f'<text x="85" y="182" {F} font-size="12" font-weight="700" fill="#c9d1d9">About Me</text>')
+a(f'<text x="85" y="182" {F} font-size="12" font-weight="700" fill="#c9d1d9">About me</text>')
 a(f'<text x="85" y="202" {F} font-size="12" fill="#8b949e">Student of software construction, cybersecurity, and databases.</text>')
-a(f'<text x="85" y="218" {F} font-size="12" fill="#8b949e">I love learning every day, paying attention to visual details, and creating unique experiences for users.</text>')
+a(f'<text x="85" y="218" {F} font-size="12" fill="#8b949e">I love learning every day, paying attention to visual details and creating unique experiences for users.</text>')
 
 # Tecnologias
 tw = [len(c) * 7 + 22 for c in CHIPS]; start_x = (W - (sum(tw) + 8 * (len(tw) - 1))) / 2
@@ -105,7 +105,7 @@ for i, (n, l) in enumerate(STATS):
     cx = 140 + i * 193
     a(f'<text x="{cx}" y="332" text-anchor="middle" {F} font-size="28" font-weight="800" fill="#ffffff">{n}</text><text x="{cx}" y="350" text-anchor="middle" {F} font-size="11.5" fill="#8b949e">{l}</text>')
 
-# Pétalos cayendo animados
+# petalos cayendo animados
 for i in range(7):
     x = random.randint(40, 820); d = random.uniform(12, 18); sc = random.uniform(.35, .65); dx = random.randint(-25, 25)
     a(f'<g opacity="{random.uniform(.25,.45):.2f}" fill="#8b949e"><use href="#petal" transform="scale({sc:.2f})"><animateTransform attributeName="transform" type="rotate" values="0;360" dur="{d/2:.1f}s" repeatCount="indefinite" additive="sum"/></use>'
