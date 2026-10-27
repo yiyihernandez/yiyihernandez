@@ -105,6 +105,12 @@ for i, (n, l) in enumerate(STATS):
     cx = 140 + i * 193
     a(f'<text x="{cx}" y="332" text-anchor="middle" {F} font-size="28" font-weight="800" fill="#ffffff">{n}</text><text x="{cx}" y="350" text-anchor="middle" {F} font-size="11.5" fill="#8b949e">{l}</text>')
 
+# Pétalos cayendo animados
+for i in range(7):
+    x = random.randint(40, 820); d = random.uniform(12, 18); sc = random.uniform(.35, .65); dx = random.randint(-25, 25)
+    a(f'<g opacity="{random.uniform(.25,.45):.2f}" fill="#8b949e"><use href="#petal" transform="scale({sc:.2f})"><animateTransform attributeName="transform" type="rotate" values="0;360" dur="{d/2:.1f}s" repeatCount="indefinite" additive="sum"/></use>'
+      f'<animateMotion path="M{x},-20 C{x+dx},{H*.3:.0f} {x-dx},{H*.7:.0f} {x+dx//2},{H+10}" dur="{d:.1f}s" begin="-{random.uniform(0,d):.1f}s" repeatCount="indefinite"/></g>')
+
 a('</svg>')
 open("profile-card.svg", "w", encoding="utf-8").write("\n".join(o))
-print("Listo: profile-card.svg hecho.")
+print("Listo: profile-card.svg hecho con pétalos y altura ideal.")
